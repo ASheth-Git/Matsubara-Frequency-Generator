@@ -1,8 +1,7 @@
 """
 Copyright 2024 Alpesh Rasikbhai SHETH
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
+Licensed under the Apache License, Version 2.0 (the "License").
 You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
@@ -15,12 +14,21 @@ limitations under the License.
 """
 
 # =============================================================================
-# Matsubara Freq Generator
+# Matsubara Frequency Generator
 # =============================================================================
 import numpy as np
 
 def matsubara_frequencies(beta, num_frequencies):
+    """
+    Generates Matsubara frequencies.
+
+    Args:
+        beta (float): The inverse temperature.
+        num_frequencies (int): The number of frequencies to generate.
+
+    Returns:
+        ndarray: Array of Matsubara frequencies.
+    """
     n_values = np.arange(0, num_frequencies)
     matsubara_freqs = np.pi / beta * (2 * n_values + 1) * 1j
     return matsubara_freqs
-
